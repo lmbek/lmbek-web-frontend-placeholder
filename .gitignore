@@ -1,0 +1,6 @@
+bin/
+web-frontend
+*.exe
+*.test
+*.out
+.env
