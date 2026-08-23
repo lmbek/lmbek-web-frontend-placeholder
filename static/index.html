@@ -3,73 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LMBEK Cloud Platform</title>
+  <title>Hello World · Lars Marcher Bek</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <div class="app-container">
+    
+    <!-- Hero Section -->
     <header class="hero">
-      <div class="badge">🚀 2-Node Hetzner K3s Cluster & GitOps</div>
-      <h1>LMBEK Hobby Cloud</h1>
-      <p class="subtitle">A cost-effective multi-service cloud platform powered by Hetzner Cloud, Terraform, K3s, and ArgoCD.</p>
+      <div class="badge" id="greeting-badge">👋 Hello, World!</div>
+      <h1 class="hero-title">Lars Marcher Bek</h1>
+      <p class="hero-subtitle">Software Engineer & Cloud Architect. Welcome to my personal hub and cloud workspace.</p>
       
       <div class="status-pill" id="system-status">
         <span class="dot pulse"></span>
-        <span id="status-text">Checking Cluster Status...</span>
+        <span id="status-text">Connecting to Platform...</span>
       </div>
     </header>
 
-    <main class="grid-layout">
-      <!-- Service 1 Card -->
-      <a href="http://placeholder1.localhost" class="card">
-        <div class="card-icon">⚡</div>
-        <div class="card-content">
-          <h3>Placeholder 1 Service</h3>
-          <p>Microservice workload running backend tasks and Go API endpoints.</p>
-          <span class="card-tag">placeholder1.localhost · Go 1.26</span>
-        </div>
-      </a>
-
-      <!-- Service 2 Card -->
-      <a href="http://placeholder2.localhost" class="card">
-        <div class="card-icon">📦</div>
-        <div class="card-content">
-          <h3>Placeholder 2 Service</h3>
-          <p>Secondary microservice processing decoupled async operations.</p>
-          <span class="card-tag">placeholder2.localhost · Go 1.26</span>
-        </div>
-      </a>
-
-      <!-- Docs Card -->
-      <a href="http://docs.localhost" class="card">
-        <div class="card-icon">📚</div>
-        <div class="card-content">
-          <h3>Documentation Portal</h3>
-          <p>Architecture records, C4 models, API specs, and runbooks.</p>
-          <span class="card-tag">docs.localhost · Architecture</span>
-        </div>
-      </a>
-
-      <!-- Infrastructure & Control Plane Card -->
-      <a href="http://infra.localhost" class="card info-card">
-        <div class="card-icon">☁️</div>
-        <div class="card-content">
-          <h3>Infrastructure Topology</h3>
-          <div class="server-node">
-            <strong>Server 1 (Control Plane):</strong> <code>10.0.1.10</code> · K3s & ArgoCD
+    <!-- Bio / Intro Card -->
+    <section class="intro-section">
+      <div class="intro-card">
+        <div class="intro-avatar">👨‍💻</div>
+        <div class="intro-text">
+          <h2>About Me</h2>
+          <p>
+            Hi there! I build scalable cloud-native architectures, distributed microservices, and automated GitOps platforms. 
+            This personal space is hosted on a lightweight 2-node Hetzner K3s cluster managed declaratively with Terraform and ArgoCD.
+          </p>
+          <div class="interactive-greetings">
+            <button class="greeting-btn active" data-lang="en">English</button>
+            <button class="greeting-btn" data-lang="da">Dansk</button>
+            <button class="greeting-btn" data-lang="go">Go</button>
+            <button class="greeting-btn" data-lang="sh">Bash</button>
           </div>
-          <div class="server-node">
-            <strong>Server 2 (Worker):</strong> <code>10.0.1.11</code> · Workload Pods
+          <div class="code-snippet" id="code-snippet">
+            <code>fmt.Println("Hello, World! 👋")</code>
           </div>
-          <span class="card-tag">infra.localhost · Control Plane & Gateway</span>
         </div>
-      </a>
-    </main>
+      </div>
+    </section>
 
+    <!-- Navigation / Service Hub Cards -->
+    <section class="section">
+      <h3 class="section-heading">Workspace & Platform Services</h3>
+      <div class="grid-layout">
+        
+        <!-- Placeholder 1 Card -->
+        <a href="http://placeholder1.localhost" class="card">
+          <div class="card-icon">⚡</div>
+          <div class="card-content">
+            <h4>Placeholder 1 Service</h4>
+            <p>High-performance Go 1.26 HTTP microservice API for core platform workloads.</p>
+            <span class="card-tag">placeholder1.localhost · Go 1.26</span>
+          </div>
+        </a>
+
+        <!-- Placeholder 2 Card -->
+        <a href="http://placeholder2.localhost" class="card">
+          <div class="card-icon">📦</div>
+          <div class="card-content">
+            <h4>Placeholder 2 Service</h4>
+            <p>Secondary microservice processing async task queues and background data streams.</p>
+            <span class="card-tag">placeholder2.localhost · Go 1.26</span>
+          </div>
+        </a>
+
+        <!-- Docs Card -->
+        <a href="http://docs.localhost" class="card">
+          <div class="card-icon">📚</div>
+          <div class="card-content">
+            <h4>Architecture & Docs</h4>
+            <p>Interactive LikeC4 architecture models, C4 diagrams, and platform runbooks.</p>
+            <span class="card-tag">docs.localhost · Documentation</span>
+          </div>
+        </a>
+
+        <!-- Infrastructure Topology Card -->
+        <a href="http://infra.localhost" class="card info-card">
+          <div class="card-icon">☁️</div>
+          <div class="card-content">
+            <h4>Infrastructure & Gateway</h4>
+            <div class="server-node">
+              <strong>Control Plane:</strong> <code>10.0.1.10</code> · K3s & ArgoCD
+            </div>
+            <div class="server-node">
+              <strong>Worker Node:</strong> <code>10.0.1.11</code> · Workload Pods
+            </div>
+            <span class="card-tag">infra.localhost · Traefik & Hetzner</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Tech Stack Pills -->
+    <section class="section tech-section">
+      <h3 class="section-heading">Core Technologies</h3>
+      <div class="tech-pills">
+        <span class="pill">Go 1.26</span>
+        <span class="pill">Kubernetes (k3s)</span>
+        <span class="pill">Terraform IaC</span>
+        <span class="pill">ArgoCD GitOps</span>
+        <span class="pill">Traefik Ingress</span>
+        <span class="pill">Hetzner Cloud</span>
+        <span class="pill">Docker</span>
+        <span class="pill">GitHub Actions</span>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-      <p>Continuous GitOps: Push to <code>main</code> &rarr; GHCR Image Build &rarr; ArgoCD Auto-Reconciliation</p>
+      <p>&copy; 2026 Lars Marcher Bek · Continuous GitOps Delivery</p>
       <div class="live-clock" id="live-clock">--:--:-- UTC</div>
     </footer>
+
   </div>
 
   <script src="/app.js"></script>
