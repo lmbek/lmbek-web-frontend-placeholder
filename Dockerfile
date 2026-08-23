@@ -11,11 +11,15 @@ RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o web-frontend .
 # Final Minimal Stage
 FROM alpine:3.20
 
-RUN apk --no-cache add ca-certificates tzdata curl
+RUN apk --no-cache add ca-certificates tzdata curl && \
+    adduser -D -u 10001 appuser
 
 WORKDIR /app
 COPY --from=builder /app/web-frontend /app/web-frontend
 COPY --from=builder /app/static /app/static
+RUN chown -R appuser:appuser /app
+
+USER 10001:10001
 
 ENV PORT=8080
 ENV STATIC_DIR=/app/static
