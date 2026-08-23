@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMBEK Cloud Platform</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="hero">
+      <div class="badge">🚀 2-Node Hetzner K3s Cluster & GitOps</div>
+      <h1>LMBEK Hobby Cloud</h1>
+      <p class="subtitle">A cost-effective multi-service cloud platform powered by Hetzner Cloud, Terraform, K3s, and ArgoCD.</p>
+      
+      <div class="status-pill" id="system-status">
+        <span class="dot pulse"></span>
+        <span id="status-text">Checking Cluster Status...</span>
+      </div>
+    </header>
+
+    <main class="grid-layout">
+      <!-- Service 1 Card -->
+      <a href="/service1" class="card">
+        <div class="card-icon">⚡</div>
+        <div class="card-content">
+          <h3>Placeholder 1 Service</h3>
+          <p>Microservice workload running backend tasks and Go API endpoints.</p>
+          <span class="card-tag">Port 8082 · Go 1.26</span>
+        </div>
+      </a>
+
+      <!-- Service 2 Card -->
+      <a href="/service2" class="card">
+        <div class="card-icon">📦</div>
+        <div class="card-content">
+          <h3>Placeholder 2 Service</h3>
+          <p>Secondary microservice processing decoupled async operations.</p>
+          <span class="card-tag">Port 8081 · Go 1.26</span>
+        </div>
+      </a>
+
+      <!-- Docs Card -->
+      <a href="/docs" class="card">
+        <div class="card-icon">📚</div>
+        <div class="card-content">
+          <h3>Documentation Portal</h3>
+          <p>Architecture records, C4 models, API specs, and runbooks.</p>
+          <span class="card-tag">Port 80 · Architecture</span>
+        </div>
+      </a>
+
+      <!-- Cluster Info Card -->
+      <div class="card info-card">
+        <div class="card-icon">☁️</div>
+        <div class="card-content">
+          <h3>Infrastructure Topology</h3>
+          <div class="server-node">
+            <strong>Server 1 (Master):</strong> <code>10.0.1.10</code> · K3s Control Plane & ArgoCD
+          </div>
+          <div class="server-node">
+            <strong>Server 2 (Worker):</strong> <code>10.0.1.11</code> · Workload Pods
+          </div>
+          <span class="card-tag">2x Hetzner cx22 · ~€7.58/mo total</span>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Continuous GitOps: Push to <code>main</code> &rarr; GHCR Image Build &rarr; ArgoCD Auto-Reconciliation</p>
+      <div class="live-clock" id="live-clock">--:--:-- UTC</div>
+    </footer>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
