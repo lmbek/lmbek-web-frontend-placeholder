@@ -1,6 +1,6 @@
 # Website Frontend Service (`web-frontend`)
 
-A lightweight, modern, responsive website frontend for the LMBEK Hobby Cloud platform written in Go 1.26 with embedded static assets and status checks.
+A lightweight, responsive coming-soon page served by Go 1.26 with a Kubernetes health endpoint.
 
 ---
 
@@ -36,5 +36,4 @@ docker run -p 8080:8080 ghcr.io/lmbek/lmbek-hobby-web-frontend:latest
 | Variable | Default | Description |
 |---|---|---|
 | `PORT` | `8080` | HTTP listening port |
-| `ENVIRONMENT` | `local` | Environment identifier (`local`, `staging`, `production`) |
-| `STATIC_DIR` | `./static` | Directory containing static assets (`index.html`, CSS, JS) |
+| `STATIC_DIR` | `./static` | Directory containing the HTML and CSS assets |

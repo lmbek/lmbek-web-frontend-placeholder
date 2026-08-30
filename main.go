@@ -8,23 +8,10 @@ import (
 	"time"
 )
 
-type SystemInfo struct {
-	Service     string    `json:"service"`
-	Environment string    `json:"environment"`
-	Timestamp   time.Time `json:"timestamp"`
-	Status      string    `json:"status"`
-	Version     string    `json:"version"`
-}
-
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
-	}
-
-	env := os.Getenv("ENVIRONMENT")
-	if env == "" {
-		env = "local"
 	}
 
 	mux := http.NewServeMux()
@@ -55,23 +42,6 @@ func main() {
 		})
 	})
 
-	// Service Info API endpoint
-	mux.HandleFunc("/api/info", func(w http.ResponseWriter, r *http.Request) {
-		info := SystemInfo{
-			Service:     "web-frontend",
-			Environment: env,
-			Timestamp:   time.Now().UTC(),
-			Status:      "operational",
-			Version:     "1.0.0",
-		}
-		w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate, max-age=0")
-		w.Header().Set("Pragma", "no-cache")
-		w.Header().Set("Expires", "0")
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusOK)
-		_ = json.NewEncoder(w).Encode(info)
-	})
-
 	server := &http.Server{
 		Addr:         ":" + port,
 		Handler:      mux,
@@ -79,7 +49,7 @@ func main() {
 		WriteTimeout: 10 * time.Second,
 	}
 
-	log.Printf("Starting web-frontend service on port %s (env: %s)...", port, env)
+	log.Printf("Starting web-frontend service on port %s...", port)
 	if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 		log.Fatalf("Server error: %v", err)
 	}
